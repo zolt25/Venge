@@ -48,30 +48,30 @@ function Start () {
 }
 
 function Update () {
-// Priblizava se ako si u radijusu, fuckfest ukratko
-if (
-    Mathf.Abs(GameObject.Find(player).transform.position.x) > Mathf.Abs(transform.position.x) || 
-    Mathf.Abs(GameObject.Find(player).transform.position.z) > Mathf.Abs(transform.position.z)
-) {
+    // Priblizava se ako si u radijusu, fuckfest ukratko
     if (
-        Mathf.Abs(GameObject.Find(player).transform.position.x) - Mathf.Abs(transform.position.x) <= 4 && 
-        Mathf.Abs(GameObject.Find(player).transform.position.z) - Mathf.Abs(transform.position.z) <= 4
+        Mathf.Abs(GameObject.Find(player).transform.position.x) > Mathf.Abs(transform.position.x) || 
+        Mathf.Abs(GameObject.Find(player).transform.position.z) > Mathf.Abs(transform.position.z)
     ) {
-        xPos();
-        zPos();
-    }
-} else if (
-    Mathf.Abs(GameObject.Find(player).transform.position.x) < Mathf.Abs(transform.position.x) || 
-    Mathf.Abs(GameObject.Find(player).transform.position.z) < Mathf.Abs(transform.position.z)
-) {
-    if (
-        Mathf.Abs(transform.position.x) - Mathf.Abs(GameObject.Find(player).transform.position.x) <= 4 && 
-        Mathf.Abs(transform.position.z) - Mathf.Abs(GameObject.Find(player).transform.position.z) <= 4
+        if (
+            Mathf.Abs(GameObject.Find(player).transform.position.x) - Mathf.Abs(transform.position.x) <= 4 && 
+            Mathf.Abs(GameObject.Find(player).transform.position.z) - Mathf.Abs(transform.position.z) <= 4
+        ) {
+            xPos();
+            zPos();
+        }
+    } else if (
+        Mathf.Abs(GameObject.Find(player).transform.position.x) < Mathf.Abs(transform.position.x) || 
+        Mathf.Abs(GameObject.Find(player).transform.position.z) < Mathf.Abs(transform.position.z)
     ) {
-        xPos();
-        zPos();
+        if (
+            Mathf.Abs(transform.position.x) - Mathf.Abs(GameObject.Find(player).transform.position.x) <= 4 && 
+            Mathf.Abs(transform.position.z) - Mathf.Abs(GameObject.Find(player).transform.position.z) <= 4
+        ) {
+            xPos();
+            zPos();
+        }
     }
-}
     
     /*
     if (
@@ -82,7 +82,6 @@ if (
         zPos();
     }
     */
-
 }
 
 function OnCollisionEnter(col: Collision){
